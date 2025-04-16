@@ -70,3 +70,8 @@ Your `.txt` file should be in the standard WhatsApp export format, for example:
 - All AI-based analysis is done **locally** — no data is sent to the internet.
 - The app interface is in German but can be translated or modified as needed.
 - The more messages are provided, the more meaningful the analysis becomes.
+
+
+## Contributing
+
+> 💡 **Want to contribute?** Check out our [contributing guidelines](./CONTRIBUTING.md) before you start.

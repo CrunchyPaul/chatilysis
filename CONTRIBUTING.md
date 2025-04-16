@@ -31,6 +31,12 @@ Please follow these standards so the codebase remains clean and maintainable:
 
 ---
 
+## 📁 File Structure
+
+Please try to follow the existing folder structure when adding new files. If you're unsure, ask in the issue comments before starting.
+
+---
+
 ## ❤️ Code of Conduct
 
 Be respectful, constructive, and open to feedback. This is a welcoming space for everyone.

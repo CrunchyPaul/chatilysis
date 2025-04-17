@@ -1,0 +1,29 @@
+name: Label "un-certified" for issues by non-collaborators
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-label:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check if issue creator is a collaborator
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const issueCreator = context.payload.issue.user.login;
+          const collaborators = await github.rest.repos.listCollaborators({
+            owner: context.repo.owner,
+            repo: context.repo.repo
+          });
+          
+          const isCollaborator = collaborators.data.some(collaborator => collaborator.login === issueCreator);
+          if (!isCollaborator) {
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              labels: ['un-certified']
+            });
+          }
